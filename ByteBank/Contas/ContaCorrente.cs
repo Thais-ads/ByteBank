@@ -12,13 +12,18 @@ namespace ByteBank.Contas
     public class ContaCorrente
     {
 
-        public int numero_agencia;
+        private int numero_agencia;
+       
+        private Cliente titular;
 
-        public Cliente titular;
 
-        public string conta;
 
-        public double saldo;
+        //private string conta;
+
+
+        
+
+        private double saldo=100;
 
         //criando um Medodo ;
         public void Depositar(double valor)
@@ -58,6 +63,45 @@ namespace ByteBank.Contas
                 transferencia.Depositar(valor);
 
                 return true;
+            }
+        }
+
+        public void Setasaldo(double valor)
+        {
+            if (valor < 0)
+            {
+                return;
+                //para a operaçao do metodo
+            }
+            else
+            {
+                this.saldo = valor;
+            }
+        }
+
+
+        // esse metodo ele muda o valor real do atributo que esteja na mesma folha de rosto, e apos chamado no Program ele pode exibir.
+        public double Getsaldo()
+        {
+            return this.saldo;
+        }
+
+
+        //Propriedades.
+        public int Numero_Agencia
+        {
+
+            get { return this.numero_agencia; }
+
+            set
+            {
+
+                if (value > 0)
+                {
+                    this.numero_agencia = value;
+
+                }
+
             }
         }
     }
