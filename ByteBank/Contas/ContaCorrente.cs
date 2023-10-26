@@ -14,16 +14,25 @@ namespace ByteBank.Contas
 
         private int numero_agencia;
        
-        private Cliente titular;
+        public Cliente Titular;
 
+        public static int totaldecontascriadas { get; private set; }
 
-
-        //private string conta;
-
-
-        
+        public int conta;
 
         private double saldo=100;
+
+
+        //construtor
+        public ContaCorrente(int numero_agencia, int conta)
+        {
+            this.numero_agencia = numero_agencia;
+            this.conta = conta;
+            totaldecontascriadas++;
+        }
+
+
+
 
         //criando um Medodo ;
         public void Depositar(double valor)
@@ -93,7 +102,8 @@ namespace ByteBank.Contas
 
             get { return this.numero_agencia; }
 
-            set
+           //ele somente exibe dentro da mesma class
+          private  set
             {
 
                 if (value > 0)
@@ -103,7 +113,24 @@ namespace ByteBank.Contas
                 }
 
             }
+
+
         }
+
+        //totalizar a quantidade de contas;
+        //public List<int> Listaquantidadescontas(int conta)
+        //{
+        //    List<int> qtdadescontas = new List<int> ();
+            
+        //    qtdadescontas.Add(conta);
+
+        //    return qtdadescontas;
+
+
+        //}
+       
+
+
     }
 
 

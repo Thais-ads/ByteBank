@@ -77,16 +77,42 @@
 
 
 using ByteBank.Contas;
+using ByteBank.Titular;
 
-ContaCorrente Testeconta = new ContaCorrente();
+//ContaCorrente Testeconta = new ContaCorrente();
 
-//testando os valores e metodos
-Testeconta.Setasaldo(200);
+////testando os valores e metodos
+//Testeconta.Setasaldo(200);
 
-Console.WriteLine($"testando o valor do metodo manipulado: {Testeconta.Getsaldo()}");
+//Console.WriteLine($"testando o valor do metodo manipulado: {Testeconta.Getsaldo()}");
 
 
 
-//Chamando no Main a função encapsulada da classe;
-Testeconta.Numero_Agencia=18;
-Console.WriteLine($"testensdo {Testeconta.Numero_Agencia}" );
+////Chamando no Main a função encapsulada da classe;
+//Testeconta.Numero_Agencia=18;
+//Console.WriteLine($"testensdo {Testeconta.Numero_Agencia}" );
+
+ContaCorrente novaconta1 = new ContaCorrente(22, 2);
+Console.WriteLine(ContaCorrente.totaldecontascriadas);
+
+
+
+ContaCorrente novaconta = new ContaCorrente(21, 0);
+Console.WriteLine(ContaCorrente.totaldecontascriadas);
+
+
+
+ContaCorrente novaconta5 = new ContaCorrente(21, 0);
+Console.WriteLine(ContaCorrente.totaldecontascriadas);
+
+//definir alguns campos : numero agencia. numero conta.
+//List<int> listaDeQuantidades = novaconta.Listaquantidadescontas(novaconta.conta);
+
+//foreach (int quantidade in listaDeQuantidades)
+//{
+//    Console.WriteLine($"Quantidade na lista: {quantidade}");
+//}
+
+
+
+
